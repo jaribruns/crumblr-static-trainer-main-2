@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crumblr-trainer"
+version = "0.9.0"
+description = "Bounded, journal-first quantitative research core for Crumblr"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary" }
+authors = [{ name = "Crumblr" }]
+dependencies = []
+
+[project.optional-dependencies]
+pdf = ["pypdf>=5"]
+
+[project.scripts]
+crumblr-trainer = "crumblr_trainer.cli:main"
+crumblr-trainer-api = "crumblr_trainer.api:main"
+crumblr-trainer-worker = "crumblr_trainer.worker:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["crumblr_trainer*"]

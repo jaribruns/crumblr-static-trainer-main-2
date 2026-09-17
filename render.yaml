@@ -1,0 +1,52 @@
+services:
+  - type: web
+    name: crumblr-static-trainer
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+    numInstances: 1
+    envVars:
+      - key: TRAINER_HOME
+        value: /var/data/trainer
+      - key: HOST
+        value: 0.0.0.0
+      - key: CAMOFOX_BASE_URL
+        value: http://127.0.0.1:9377
+      - key: CAMOFOX_BIND_HOST
+        value: 127.0.0.1
+      - key: CAMOFOX_PORT
+        value: "9377"
+      - key: CAMOFOX_PROFILE_DIR
+        value: /var/data/camofox/profiles
+      - key: CAMOFOX_TRACES_DIR
+        value: /var/data/camofox/traces
+      - key: CAMOFOX_UPLOADS_DIR
+        value: /var/data/camofox/uploads
+      - key: CAMOFOX_CRASH_REPORT_ENABLED
+        value: "false"
+      - key: CAMOFOX_DISABLE_DEFAULT_ADDONS
+        value: "true"
+      - key: CAMOFOX_TIMEOUT_SECONDS
+        value: "90"
+      - key: HANDLER_TIMEOUT_MS
+        value: "75000"
+      - key: MAX_TABS_PER_SESSION
+        value: "2"
+      - key: MAX_TABS_GLOBAL
+        value: "4"
+      - key: MAX_CONCURRENT_PER_USER
+        value: "1"
+      - key: TRAINER_API_KEY
+        generateValue: true
+      - key: TRAINER_MT5_WORKFLOW_ENABLED
+        value: "true"
+      - key: TRAINER_AGENT_TIMEOUT_SECONDS
+        value: "25"
+      - key: TRAINER_MAX_BODY_BYTES
+        value: "47185920"
+      - key: CAMOFOX_ACCESS_KEY
+        generateValue: true

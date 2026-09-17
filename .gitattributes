@@ -1,0 +1,2 @@
+# Preserve the exact reviewed adapter fixture bytes on every platform.
+tests/fixtures/orb_6_01.mq5 -text

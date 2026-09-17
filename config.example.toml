@@ -1,0 +1,17 @@
+home = "./runtime"
+mt5_terminal = "C:/Program Files/MetaTrader 5/terminal64.exe"
+bootstrap_samples = 2000
+camofox_base_url = "http://127.0.0.1:9377"
+camofox_user_id = "crumblr-trainer"
+camofox_timeout_seconds = 30
+camofox_max_snapshot_chars = 250000
+operating_mode = "standalone"
+agent_mode = "static"
+primary_agent_provider = "groq"
+primary_agent_model = "openai/gpt-oss-120b"
+primary_agent_base_url = "https://api.groq.com/openai/v1"
+review_agent_provider = "cloudflare"
+review_agent_model = "@cf/openai/gpt-oss-20b"
+agent_timeout_seconds = 60
+
+# Prefer the CAMOFOX_ACCESS_KEY environment variable instead of storing it here.

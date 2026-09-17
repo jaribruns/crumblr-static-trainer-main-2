@@ -1,0 +1,15 @@
+services:
+  trainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8765:10000"
+    environment:
+      PORT: "10000"
+      TRAINER_API_KEY: "${TRAINER_API_KEY:?Set TRAINER_API_KEY in .env}"
+      CAMOFOX_ACCESS_KEY: "${CAMOFOX_ACCESS_KEY:?Set CAMOFOX_ACCESS_KEY in .env}"
+    volumes:
+      - ./runtime:/var/data
+    restart: unless-stopped
+

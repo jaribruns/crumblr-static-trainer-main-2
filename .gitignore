@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+*.zip
+data/
+runtime/
+tmp-runtime/
+reports/*
+!reports/README.md
